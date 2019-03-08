@@ -44,7 +44,7 @@ class Student extends Person {
         }
 };
 
-class ProjectManagers extends Instructor {
+class ProjectManager extends Instructor {
     constructor(pmAt){
         super(pmAt);
         this.gradClassName = pmAt.gradClassName;
@@ -54,6 +54,47 @@ class ProjectManagers extends Instructor {
             console.log(`${this.name} announces to ${channel}, @channel standy times!`)
         }   
         debugsCode(student, subject){
-            console.log(`${this.name} debugs ${student.name}'s code on ${subject}.`)
+            console.log(`${this.name} debugs ${student}'s code on ${subject}.`)
         }
 }
+
+const random = new Person ({
+    name: "Guy",
+    age: 30,
+    location: "the Matrix",
+    gender: "male",
+});
+const leslie = new Student ({
+    name: "Leslie",
+    age: 24,
+    location: "El Paso",
+    gender: "female",
+    previousBackground: "Information Technology",
+    className: "Web18 Flex",
+    favSubjects: ["JavaScript", "Python", "CSS FlexBox"]
+});
+
+const josh = new Instructor ({
+    name: "Josh",
+    age: 19,
+    location: "the Matrix",
+    gender: "male",
+    specialty: "Instructing",
+    favLanguage: "JS",
+    catchPhrase: "Isn't that awesome, guys?"
+})
+const jonny = new ProjectManager ({
+    name: "Jonny",
+    age: 19,
+    location: "the Matrix",
+    gender: "male",
+    specialty: "hacker",
+    favLanguage: ["HTML", "CSS", "JS"],
+    catchPhrase: "Hell Yeah Effin Right!",
+    gradClassName: "LS 2019",
+    favInstructor: "Josh"
+})
+random.speak();
+josh.demo("classes");
+leslie.sprintChallenge("JS");
+jonny.debugsCode("leslie", "HTML");
